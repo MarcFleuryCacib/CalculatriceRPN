@@ -1,0 +1,36 @@
+# Roadmap du Projet Calculatrice RPN
+
+## Version 1.0 (Objectifs initiaux)
+- [x] Ajout d'un élément dans la pile
+- [x] Récupération de la pile
+- [x] Nettoyage de la pile
+- [x] Suppression du dernier element de la pile
+- [x] Opération d'addition (en utilisant le dernier élément de la pile)
+- [x] Opération de soustraction (en utilisant le dernier élément de la pile)
+- [x] Opération de multiplication (en utilisant le dernier élément de la pile)
+- [x] Opération de division (en utilisant le dernier élément de la pile)
+- [x] Documentation Swagger ( Read Me, To DO, Road Map)
+
+## Version 1.5 (possibilité de changement de sens)
+- [x] Transformer une pile en List pour facilité l'ordre
+- [x] Opération d'addition (en utilisant le premier élément de la pile)
+- [x] Opération de soustraction (en utilisant le premier élément de la pile)
+- [x] Opération de multiplication (en utilisant le premier élément de la pile)
+- [x] Opération de division (en utilisant le dernier premier de la pile)
+
+## Version 2.0 (Fonctionnalités à venir)
+- [ ] Opérations mathématiques avancées (ex : exponentiation, racine carrée, trigonométrie)
+- [ ] Authentification et autorisation des utilisateurs
+- [ ] Exportation des résultats vers un fichier
+- [ ] Internationalisation pour prendre en charge plusieurs langues
+- [ ] Améliorations de l'interface utilisateur
+- [ ] Transformation d'unités (par exemple, kg en g, degrés en radians)
+
+## Version 3.0 (Possibilités futures)
+- [ ] Calculs financiers (ex : valeur actuelle nette, taux de rendement interne)
+- [ ] Utilisation de lois statistiques (loi normale, loi exponentielle)
+- [ ] Intégration avec des services cloud pour le stockage des données
+- [ ] Fonctionnalité d'historique pour suivre les opérations précédentes
+- [ ] Prise en charge des unités de mesure
+- [ ] Analyse de données avancée (temps de traitement)
+- [ ] Améliorations de la sécurité
