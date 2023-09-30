@@ -73,3 +73,11 @@ Pour démarrer le projet, suivez ces étapes :
    - Une fois Swagger installé, créez un dossier Swagger avec un fichier JSON associé pour configurer Swagger.
 
    - À l'aide de http://localhost:5000/swagger, vous pouvez accéder à l'API en local avec une interface Swagger pour une meilleure visualisation et test.
+  
+5. **Premiere requete PUSH ET PILE** :
+   
+   - Actuellement, l'API permet d'ajouter des éléments à la pile et de récupérer l'état actuel de la pile sous forme de liste, avec un affichage des index.
+   - J'utilise également la fonction FromBody pour éviter d'ajouter des informations inutiles à la requête API.
+   - J'ai rencontré un problème où l'ajout d'éléments n'enregistrait pas les informations correctement, ce qui écrasait la pile existante. J'ai donc ajouté une classe PileElement pour corriger ce problème.
+  
+
