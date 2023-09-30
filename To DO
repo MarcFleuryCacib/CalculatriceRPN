@@ -1,0 +1,27 @@
+                                                          Liste de Tâches - Projet Calculatrice RPN
+
+* Améliorations Possibles problème de temps *
+
+Amélioration de la Gestion des Erreurs : Actuellement, les erreurs sont renvoyées sous forme de simples messages textuels en proposant de rajouter ou modifier une valeur dans la pile.
+
+Documentation Approfondie : Ajouter des commentaires détaillés dans le code pour expliquer la logique derrière chaque fonction et endpoint, améliorant ainsi la compréhension du code pour les développeurs.
+
+Sécurité : Implémenter une couche de sécurité pour protéger l'API contre les utilisations malveillantes et les attaques.
+
+Interface Utilisateur : Créer une interface utilisateur pour la calculatrice RPN, ce qui permettra aux utilisateurs de saisir et d'afficher les résultats plus facilement.
+
+Mise en place sur un serveur Web pour enlever le systeme "local Host".
+
+Amelioration du swagger.json
+
+* Raccourcis Pris * 
+
+Structure de Données de la Pile : Utilisation d'une liste au lieu d'une structure de données de pile personnalisée.
+
+Simplification de la Gestion des Erreurs : Les messages d'erreur sont simples et manquent de détails.
+
+Sécurité Minimale : Aucune mesure de sécurité avancée n'a été mise en place.
+
+Gestion des Opérations Non Prises en Charge : Les opérations non prises en charge ne sont pas gérées de manière spécifique.
+
+Absence d'Interface Utilisateur : Aucune interface utilisateur n'a été créée pour la calculatrice.
