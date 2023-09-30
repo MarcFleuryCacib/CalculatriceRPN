@@ -6,28 +6,48 @@ namespace Calculatrice_RPN.Controllers
     [Route("[controller]")]
     public class CalculatriceRPN : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        // Variable statique pour stocker la pile
+        private static readonly Stack<double> pile = new Stack<double>();
 
-        private readonly ILogger<CalculatriceRPN> _logger;
-
-        public CalculatriceRPN(ILogger<CalculatriceRPN> logger)
+        // Classe pour représenter les éléments de la pile avec les indices
+        public class PileElement
         {
-            _logger = logger;
+            public int Index { get; set; }
+            public double Value { get; set; }
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<Calculatrice_RPN> Get()
+        // Endpoint pour ajouter un élément dans la pile
+        [HttpPost("PUSH")]
+        public ActionResult AjouterElement([FromBody] double nombre)
         {
-            return Enumerable.Range(1, 5).Select(index => new Calculatrice_RPN
+            lock (pile)
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                // Ajout de l'élément à la pile
+                pile.Push(nombre);
+
+                // Réponse de succès avec message
+                var successResponse = new
+                {
+                    message = "Élément ajouté avec succès.",
+                    value = nombre, // Valeur ajoutée
+                    //pile = pile.ToArray() // Contenu actuel de la pile
+                };
+
+                // Renvoie une réponse HTTP 200 (OK) avec le message personnalisé et le contenu de la pile
+                return Ok(successResponse);
+            }
+        }
+
+        // Endpoint pour récupérer la pile avec les indices
+        [HttpGet("PILE")]
+        public ActionResult<IEnumerable<PileElement>> GetPileWithIndices()
+        {
+            lock (pile)
+            {
+                // Convertit la pile en une liste d'objets PileElement pour le renvoyer sous forme de réponse JSON
+                var pileList = pile.Select((value, index) => new PileElement { Index = index, Value = value }).ToList();
+                return Ok(pileList);
+            }
         }
     }
 }
