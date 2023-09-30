@@ -74,6 +74,16 @@ Pour démarrer le projet, suivez ces étapes :
 
    - À l'aide de http://localhost:5000/swagger, vous pouvez accéder à l'API en local avec une interface Swagger pour une meilleure visualisation et test.
   
+                                                                      ** Avantages de l'Utilisation d'une Pile (Stack)**
+
+Il est préférable d'utiliser une pile (stack) plutôt qu'une liste pour implémenter une calculatrice utilisant la notation polonaise inverse (RPN) pour plusieurs raisons :
+
+   - Conformité à la Méthode RPN : La notation RPN repose sur le principe de traitement des opérandes avant les opérateurs. L'utilisation d'une pile est parfaitement adaptée à ce modèle, car chaque opérande peut être empilée, puis les opérateurs peuvent être appliqués en retirant les éléments de la pile dans le bon ordre. Cela reflète naturellement la manière dont les expressions RPN sont évaluées.
+
+   - Ordre d'Évaluation Prévisible : Avec une pile, l'ordre d'évaluation est toujours prévisible, car les éléments sont retirés dans l'ordre où ils ont été empilés. Cela garantit que les opérations sont effectuées dans le bon ordre, ce qui est essentiel pour les expressions mathématiques correctes.
+
+   - Gestion des Erreurs Facilitée : En utilisant une pile, il est plus simple de gérer les erreurs, telles que des opérations incorrectes ou des expressions mal formées. Si une erreur est détectée, vous pouvez simplement vider la pile pour revenir à un état initial.
+  
 5. **Premiere requete PUSH ET PILE** :
    
    - Actuellement, l'API permet d'ajouter des éléments à la pile et de récupérer l'état actuel de la pile sous forme de liste, avec un affichage des index.
@@ -89,5 +99,17 @@ Pour démarrer le projet, suivez ces étapes :
    - Modification du dernier element de la liste. Cela peut permettre dans des opérations longues si l'utilisateur a fait une erreur de devoir refaire la totalité pour une simple erreur.
      
    - La fonction Pop sert à supprimer le dernier élément de la pile et à prendre sa valeur.
+  
+6. Requêtes ADD, SUB, MULTIPLI, ET DIV** :
+
+   - Les opérations d'addition, de soustraction, de multiplication et de division ont été implémentées avec une gestion rigoureuse des erreurs.
+         - Une opération ne peut être effectuée que si au moins deux éléments sont présents dans la pile.
+         - Une division par zéro est correctement gérée pour éviter tout comportement indésirable.
+     
+   - Pour l'addition et la multiplication, l'ordre des éléments n'a pas d'importance.
+     
+   - En revanche, pour la soustraction, l'opération se fait en prenant l'avant-dernier élément de la pile moins le dernier élément.
+     
+   - Pour la division, l'opération est effectuée en prenant l'avant-dernier élément divisé par le dernier élément.
   
 
